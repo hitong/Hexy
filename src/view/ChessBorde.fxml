@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="742.0" prefWidth="1338.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ChessBorderController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="开始">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#newGame" text="新的对战" />
+                  <MenuItem mnemonicParsing="false" onAction="#setMan" text="人人对战" />
+                  <MenuItem mnemonicParsing="false" onAction="#setRobot" text="人机对战(人先行)" />
+                  <MenuItem mnemonicParsing="false" onAction="#robotGoFirst" text="人机对战(机器先行)" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="更多">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#writeToFile" text="保存游戏记录" />
+                  <MenuItem mnemonicParsing="false" onAction="#restore" text="恢复游戏记录" />
+              <MenuItem mnemonicParsing="false" onAction="#explanation" text="游戏说明" />
+                  <MenuItem mnemonicParsing="false" onAction="#author" text="开发者信息" />
+                  <MenuItem mnemonicParsing="false" onAction="#exit" text="退出游戏" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <right>
+      <VBox prefHeight="509.0" prefWidth="180.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="61.0" prefWidth="201.0" text="Hex棋">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#restart" prefHeight="62.0" prefWidth="274.0" text="新一轮对局">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="80.0" />
+               </VBox.margin></Button>
+            <Button mnemonicParsing="false" onAction="#undo" prefHeight="73.0" prefWidth="274.0" text="悔棋">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </VBox.margin></Button>
+            <Button mnemonicParsing="false" onAction="#randomMove" prefHeight="73.0" prefWidth="274.0" text="随机模拟">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </VBox.margin></Button>
+            <Label text="先手耗时：">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="20.0" />
+               </VBox.margin></Label>
+            <TextArea fx:id="firstTime" editable="false" prefHeight="50.0" prefWidth="180.0" wrapText="true">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+            </TextArea>
+            <Label text="后手耗时：">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </VBox.margin></Label>
+            <TextArea fx:id="secondTime" editable="false" prefHeight="50.0" prefWidth="180.0" wrapText="true">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+            </TextArea>
+         </children>
+      </VBox>
+   </right>
+   <center>
+      <Pane fx:id="mainPane" BorderPane.alignment="CENTER" />
+   </center>
+   <left>
+      <VBox prefHeight="717.0" prefWidth="242.0">
+         <children>
+            <Label text="下棋记录:">
+               <VBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tablePane" fixedCellSize="0.0" pickOnBounds="false" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="peo" editable="false" minWidth="8.0" prefWidth="92.0" sortable="false" text="操作" />
+                  <TableColumn fx:id="message" editable="false" prefWidth="153.0" sortType="DESCENDING" sortable="false" text="棋盘坐标" />
+              </columns>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </TableView>
+            <Label prefHeight="38.0" prefWidth="243.0" text="对局情况(先手:后手)：" textFill="#000000fe">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" top="30.0" />
+               </VBox.margin>
+            </Label>
+            <TextArea fx:id="result" prefHeight="135.0" prefWidth="250.0">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Microsoft YaHei UI Light" size="64.0" />
+               </font>
+               <padding>
+                  <Insets left="3.0" right="3.0" top="5.0" />
+               </padding>
+            </TextArea>
+            <Label text="搜索进度：">
+               <VBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <HBox>
+               <children>
+                  <ProgressBar fx:id="bar" prefHeight="58.0" prefWidth="200.0" progress="0.0">
+                     <HBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </HBox.margin>
+                  </ProgressBar>
+                  <ProgressIndicator fx:id="pro" prefHeight="40.0" prefWidth="69.0" progress="0.0">
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                     <HBox.margin>
+                        <Insets right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </ProgressIndicator>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
+</BorderPane>
