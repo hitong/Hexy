@@ -5,3 +5,10 @@
 # 程序运行要求
 要求jdk1.8以上（因为使用了JavaFX来搭建棋盘UI）
 
+# 程序运行示例
+## 启动：
+![image](https://github.com/hitong/Hexy/blob/master/images/%E5%90%AF%E5%8A%A8.png)
+## 模式选择：
+![image](https://github.com/hitong/Hexy/blob/master/images/%E5%AF%B9%E6%88%98%E6%A8%A1%E5%BC%8F.png)
+## 对局示例：
+![image](https://github.com/hitong/Hexy/blob/master/images/%E5%AE%8C%E6%95%B4%E6%A3%8B%E5%B1%80.png)
