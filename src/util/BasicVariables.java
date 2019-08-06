@@ -24,7 +24,7 @@ public class BasicVariables {
 			+ "棋盘为11×11的六边形小格子组成，它是一种两人添子类游戏（跟五子棋一样）。" 
 			+ "它的游戏规则是：两人轮流下子，直到有一方用棋子沟通了两条边（比如先手沟通上"
 			+ "下两边则胜利，后手沟通左右两边则胜利）";
-	public final static String ADITOR = "重理最帅的桐爸爸:使用中有任何问题都可以通过QQ邮箱:1906194855@qq.com联系我\n共同学习共同进步！！！😁";
+	public final static String ADITOR = "使用中有任何问题都可以通过QQ邮箱:1906194855@qq.com联系我\n共同学习共同进步！！！😁";
 	public static int[][] TABLE = new int[11][11];// 先手为1，后手为-1，空白为0
 	public static Stack<Point> HISTORY = new Stack<>();
 }
