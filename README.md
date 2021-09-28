@@ -12,3 +12,4 @@
 ![image](https://github.com/hitong/Hexy/blob/master/images/%E5%AF%B9%E6%88%98%E6%A8%A1%E5%BC%8F.png)
 ## 对局示例：
 ![image](https://github.com/hitong/Hexy/blob/master/images/%E5%AE%8C%E6%95%B4%E6%A3%8B%E5%B1%80.png)
+......
